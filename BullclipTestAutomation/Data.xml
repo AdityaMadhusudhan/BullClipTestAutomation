@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestData>
+  
+  <ValidLogin>
+    <username>interview-test@drawboard.com</username>
+    <password>drawboard-test</password>
+    <Url>https://preprod-api.bullclip.com/api/v1/auth/login</Url>
+    <ExpectedStatusCode>OK</ExpectedStatusCode>
+  </ValidLogin>
+  
+  <InvalidPasswordLogin>
+    <username>interview-test@drawboard.com</username>
+    <password>drawboard-test123</password>
+    <Url>https://preprod-api.bullclip.com/api/v1/auth/login</Url>
+    <ExpectedStatusCode>BadRequest</ExpectedStatusCode>
+  </InvalidPasswordLogin>
+
+  <InvalidUserLogin>
+    <username>interview-test@drawboard.com123</username>
+    <password>drawboard-test</password>
+    <Url>https://preprod-api.bullclip.com/api/v1/auth/login</Url>
+    <ExpectedStatusCode>BadRequest</ExpectedStatusCode>
+  </InvalidUserLogin>
+
+  <ValidUserCreation>
+     <Url>https://sandbox.bullclip.com/api/v1/user/create</Url>
+     <Key>1c2ce8bc7b8649b7b5467afcf17898de</Key>
+     <ExpectedStatusCode>OK</ExpectedStatusCode>
+  </ValidUserCreation>
+
+  <DuplicateUserCreation_FirstName>
+    <Url>https://sandbox.bullclip.com/api/v1/user/create</Url>
+    <Key>1c2ce8bc7b8649b7b5467afcf17898de</Key>
+    <ExpectedStatusCode>BadRequest</ExpectedStatusCode>
+  </DuplicateUserCreation_FirstName>
+
+  <PasswordMismatch>
+    <Url>https://sandbox.bullclip.com/api/v1/user/create</Url>
+    <Key>1c2ce8bc7b8649b7b5467afcf17898de</Key>
+    <ExpectedStatusCode>BadRequest</ExpectedStatusCode>
+  </PasswordMismatch>
+
+  <InvalidKeyUserCreation>
+    <Url>https://sandbox.bullclip.com/api/v1/user/create</Url>
+    <Key>1c2ce8bc7b8649b7b5467afcf17898de123</Key>
+    <ExpectedStatusCode>Unauthorized</ExpectedStatusCode>
+  </InvalidKeyUserCreation>
+
+  <ShortPassword>
+    <Url>https://sandbox.bullclip.com/api/v1/user/create</Url>
+    <Key>1c2ce8bc7b8649b7b5467afcf17898de</Key>
+    <ExpectedStatusCode>BadRequest</ExpectedStatusCode>
+  </ShortPassword>
+
+  <InvalidEmail>
+    <Url>https://sandbox.bullclip.com/api/v1/user/create</Url>
+    <Key>1c2ce8bc7b8649b7b5467afcf17898de</Key>
+    <ExpectedStatusCode>BadRequest</ExpectedStatusCode>
+  </InvalidEmail>
+
+ <UpdateName>
+    <username>interview-test@drawboard.com</username>
+    <password>drawboard-test</password>
+   <Key>1c2ce8bc7b8649b7b5467afcf17898de</Key>
+    <LoginUrl>https://sandbox.bullclip.com/api/v1/auth/login</LoginUrl>
+    <UpdateUrl>https://sandbox.bullclip.com/api/v1/user/profile</UpdateUrl>
+    <ExpectedStatusCode>OK</ExpectedStatusCode>
+  </UpdateName>
+</TestData>
